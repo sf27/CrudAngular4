@@ -1,0 +1,14 @@
+<div *ngIf="post">
+  <md-card>
+    <md-card-header>
+      <md-card-title><h3>User Id: </h3>{{post.userId}}</md-card-title>
+      <md-card-subtitle><h3>Title: </h3>{{post.title}}</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <h3>Body: </h3>
+      <p>
+        {{post.body}}
+      </p>
+    </md-card-content>
+  </md-card>
+</div>

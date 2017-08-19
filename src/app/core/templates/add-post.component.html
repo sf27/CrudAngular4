@@ -1,0 +1,56 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>
+      <h2>Add Post</h2>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <form class="form-full-form"
+          #f="ngForm"
+          novalidate
+          (ngSubmit)="f.form.valid && createPost(f)">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="User Id"
+                     type="number"
+                     required
+                     name="userId"
+                     #userId="ngModel"
+                     [(ngModel)]="post.userId">
+            </md-input-container>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <input mdInput placeholder="Title"
+                     type="text"
+                     required
+                     name="title"
+                     #title="ngModel"
+                     [(ngModel)]="post.title">
+            </md-input-container>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <md-input-container class="form-full-width">
+              <textarea mdInput placeholder="Body"
+                        type="text"
+                        required
+                        name="body"
+                        #body="ngModel"
+                        [(ngModel)]="post.body"></textarea>
+            </md-input-container>
+          </td>
+        </tr>
+      </table>
+      <button type="submit"
+              md-raised-button
+              [disabled]="!f.form.valid">Add Post
+      </button>
+    </form>
+  </md-card-content>
+</md-card>
