@@ -10,10 +10,6 @@ export class MainComponent {
   constructor(private router: Router) {
   }
 
-  gotoPostsList(): void {
-    this.router.navigate(['/post/list']);
-  }
-
   gotoMain(): void {
     this.router.navigate(['/']);
   }

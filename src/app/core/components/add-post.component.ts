@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {PostService} from '../services/post.service';
 import {Location} from '@angular/common';
-import 'rxjs/add/operator/switchMap';
 import {MdSnackBar} from '@angular/material';
 
 @Component({

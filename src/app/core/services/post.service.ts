@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http, RequestOptions} from '@angular/http';
-import 'rxjs/add/operator/map';
 import config from '../../app.config';
-import {PostData} from '../models/post.models';
+import {Post} from '../models/post.models';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PostService {
@@ -23,7 +24,7 @@ export class PostService {
   constructor(private http: Http) {
   }
 
-  addPost(data: PostData) {
+  addPost(data: Post) {
     return this.http.post(
       config.API_URL + 'posts',
       data,
@@ -31,7 +32,7 @@ export class PostService {
     );
   }
 
-  editPost(data: PostData) {
+  editPost(data: Post) {
     return this.http.put(
       config.API_URL + 'posts/' + data.id,
       data,
@@ -39,7 +40,7 @@ export class PostService {
     );
   }
 
-  deletePost(data: PostData) {
+  deletePost(data: Post) {
     return this.http.delete(config.API_URL + 'posts/' + data.id);
   }
 
@@ -54,6 +55,6 @@ export class PostService {
     return this.http.get(
       config.API_URL + 'posts/' + id,
       this.getOptions
-    );
+    ).toPromise();
   }
 }

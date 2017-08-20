@@ -29,6 +29,7 @@ import {MainComponent} from './core/components/main.component';
 import {DeletePostComponent} from './core/components/delete-post.component';
 import {AddPostComponent} from 'app/core/components/add-post.component';
 import {EditPostComponent} from './core/components/edit-post.component';
+import {PostResolve} from 'app/core/services/post.resolve';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {EditPostComponent} from './core/components/edit-post.component';
     MdIconModule, MdToolbarModule, MdProgressSpinnerModule, MdTableModule,
     MdCommonModule, CdkTableModule, MdCardModule, MdDialogModule, MdSnackBarModule
   ],
-  providers: [PostService, HttpModule],
+  providers: [PostService, PostResolve, HttpModule],
   bootstrap: [MainComponent],
   entryComponents: [DeletePostComponent]
 })

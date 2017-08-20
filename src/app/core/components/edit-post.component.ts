@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {PostService} from '../services/post.service';
 import {Location} from '@angular/common';
-import 'rxjs/add/operator/switchMap';
 import {MdSnackBar} from '@angular/material';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-post-edit',
   templateUrl: '../templates/edit-post.component.html',
 })
-export class EditPostComponent {
+export class EditPostComponent implements OnInit {
   post: any = {};
   id: string;
 
@@ -20,9 +20,7 @@ export class EditPostComponent {
   }
 
   ngOnInit(): void {
-    this.route.paramMap
-      .switchMap((params: ParamMap) => this.postService.getPostById(+params.get('id')))
-      .subscribe(post => this.post = post.json());
+    this.post = this.route.snapshot.data['post'];
   }
 
   goBack(): void {
