@@ -9,7 +9,6 @@ import {MdSnackBar} from '@angular/material';
 })
 export class AddPostComponent {
   post: any = {};
-  id: string;
 
   constructor(private postService: PostService,
               private location: Location,

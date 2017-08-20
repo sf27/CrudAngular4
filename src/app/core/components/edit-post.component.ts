@@ -11,7 +11,6 @@ import 'rxjs/add/operator/switchMap';
 })
 export class EditPostComponent implements OnInit {
   post: any = {};
-  id: string;
 
   constructor(private postService: PostService,
               private route: ActivatedRoute,
