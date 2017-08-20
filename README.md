@@ -20,4 +20,8 @@ $ npm i
 $ ng serve
 ```
 
+### Open the browser
+
+[http:localhost:4200](http:localhost:4200)
+
 ## Happy coding!
